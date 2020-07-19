@@ -13,15 +13,6 @@ footer {
   color:#000 !important;
   font-weight: bold;
 }
-#deck {
-  height: 150px;
-}
-#social {
-  text-align: center;
-}
-.icons {
-  text-align: center;
-}
 #table {
   margin-bottom: 100px
 }
@@ -34,4 +25,11 @@ body {
   -moz-background-size:cover;
   -o-background-size:cover;
   background-size: cover;
+}
+@media screen and (max-width: 600px) {
+  body {
+    background-color: green;
+    color: white;
+    
+  }
 }
