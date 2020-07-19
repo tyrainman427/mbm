@@ -3,7 +3,9 @@
 {% block body %}
 
 <h2>Member's List</h2>
-<a href="/create/" class="btn btn-primary btn-sm">Add Member</a>
+<hr>
+<a href="/create/" class="btn btn-primary btn-sm mb-3">Add Member</a>
+{% if object_list.count > 0 %}
 <table class="table table-hover table-sm mt-4" id="table">
   <thead>
     <tr>
@@ -20,11 +22,14 @@
       <td><a href="{% url 'members:members_detail' mem.id %}">{{mem.first_name}}</a></td>
       <td><a href="{% url 'members:members_detail' mem.id %}">{{mem.last_name}}</a></td>
       <td><a href="{% url 'members:members_detail' mem.id %}">{{mem.email_address}}</a></td>
-      <td><a href="{% url 'members:members_detail' mem.id %}">{{mem.city}}</a></td>
-      <td><a href="{% url 'members:members_detail' mem.id %}">{{mem.state}}</a></td>
-    </a>
+      <td><a href="{% url 'members:members_detail' mem.id %}">{{mem.address.city}}</a></td>
+      <td><a href="{% url 'members:members_detail' mem.id %}">{{mem.address.state}}</a></td>
     </tr>
     {% endfor  %}
+  
 </table>
+{% else %}
+<p>There are no members.</p>
+{%endif%}
 <br class="mb-6">
 {% endblock %}

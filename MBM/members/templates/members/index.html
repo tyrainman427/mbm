@@ -3,14 +3,86 @@
 {% block body %}
 {% load static %}
 {% load activity_tags %}
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <h1 class="display-4">Silvercity Uprising</h1>
-    <p class="lead">Black Lives Matter</p>
-  </div>
-</div>
 
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+<style>
+h1,h2,h3,h4,h5,h6 {
+  font-family: Poppins;
+}
+p {
+  font-family: Roboto;
+}
+#showcase h1{
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+.company_name {
+  font-size: 65px;
+  color: white;
+  text-align: center;
+}
+#showcase img {
+  height: 500px;
+}
+.showcase-left{
+  margin-left: 200px;
+  margin-top: 81px;
+}
+.showcase-right {
+  margin-right: 200px;
+}
+.showcase-btn {
+  margin-left: 242px;
+  margin-top: 14px;
+}
+#info1 .info-right{
+  margin-top: 90px;
+}
+.info-left img{
+  margin-top: 90px;
+  height: 400px;
+  background-size: cover;
+}
+#info2 {
+  margin: 20px 0 60px 0;
+}
+#member {
+  background: url("{% static 'img/shirt.jpg'%}") no-repeat center center fixed;
+  padding: 40px;
+  color: #fff;
+  border-top: #333 7px solid;
+  border-bottom: #333 7px solid;
+  background-size: cover;
+}
+body {
+  font-size: 16px;
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size: cover;
+  overflow-x: hidden;
+}
+a.nav-item.nav-link {
+  color: black;
+  font-size: 25px;
+}
+#quotes {
+  background: black;
+  padding: 50px 0 30px 0;
+  text-align: center;
+  margin-top: 40px;
+}
+#quotes p {
+  color: #fff;
+  font-size: 32px;
+  font-family: 'Josefin Sans';
+}
+#quotes p.author {
+  font-size: 20px;
+  color: #666;
+}
+
+</style>
+ <!-- <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
       <img class="d-block w-100" src="{% static 'img/ladies.jpg' %}" alt="First slide">
@@ -48,116 +120,211 @@
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
-</div>
-<br class="mb-3">
+</div> -->
+
+<section id="showcase">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6">
+        <div class="showcase-left">
+          <h1>SILVER</h1>
+          <H1>CITY</H1>
+          <H1>UPRISING</H1>
+          <hr>
+          <h2>CORPORATION</h2>
+        </div>
+        <a class="btn btn-danger btn-lg showcase-btn" href="">Our Mission</a>
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <div class="showcase-right">
+          <img src="{% static 'img/SCU.png' %}" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="quotes">
+  <div class="container">
+    <p>“If not us, then who?
+      If not now, then when?”</p>
+    <p class="author">~John Lewis</p>
+  </div>
+</section>
+
+<section id="info1">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6">
+        <div class="info-left">
+          <img src="{% static 'img/blm.jpg' %}" alt="">
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <div class="info-right">
+          <h2>Silver City Uprising's Mission</h2>
+          <p>"To create, build and promote healthy thriving businesses within the community, to positively contribute to the economic empowerment, growth and development of our community for this generation & future generations."</p>
+          <br>
+          <a class="btn btn-success btn-lg" href="">Read More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr>
+
+<section id="info2">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-6">
+        <div class="info-left">
+          <h2>Info Block 1</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque labore quod similique deleniti est, iste recusandae laudantium libero vero molestias laboriosam consequatur cumque dolor commodi possimus nulla. Doloribus, ut. Non.</p>
+          <!-- <div>
+            {% for posts in post%}
+            <div class="card mb-4">
+                <div class="card-body">
+                    <h2 class="card-title">{{ posts.title }}</h2>
+                    <p class="card-text text-muted h6">{{ posts.author }} | {{ posts.created_on}} </p>
+                    <p class="card-text">{{posts.content|slice:":200" }}</p>
+                    <a href="{% url 'mublog:post_detail' posts.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+                </div>
+            </div>
+            {% endfor %}
+          </div> -->
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-6">
+        <div class="info-right">
+          <h2>Info Block 2</h2>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque labore quod similique deleniti est, iste recusandae laudantium libero vero molestias laboriosam consequatur cumque dolor commodi possimus nulla. Doloribus, ut. Non.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="member">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-5 col-sm-5">
+            <form id="contact-form" name="contact-form" action="mail.php" method="POST">
+
+              <!--Grid row-->
+              <div class="row">
+
+                  <!--Grid column-->
+                  <div class="col-md-6">
+                      <div class="md-form mb-0">
+                          <input type="text" id="name" name="name" class="form-control">
+                          <label for="name" class="">first name</label>
+                      </div>
+                      <div class="md-form mb-0">
+                        <input type="text" id="name" name="name" class="form-control">
+                        <label for="name" class="">last name</label>
+                    </div>
+                    <div class="md-form mb-0">
+                      <input type="text" id="email" name="email" class="form-control">
+                      <label for="email" class="">Your email</label>
+                  </div>
+                  </div>
+                  <!--Grid column-->
+
+              </div>
+              <!--Grid row-->
+
+              <div class="text-center text-md-left">
+                <a class="btn btn-primary">Join Us</a>
+            </div>
+            <div class="status"></div>
+        
+          </form>
+          </div>
+          <div class="col-md-7 col-sm-7">
+
+          </div>
+      </div>
+  </div>
+</section>
+
+<!-- BLOG SECTION -->
+<!-- <br class="mb-3">
 <div class="container">
-  <div class="row">
+  <div class="row blog">
   <div class="col-8">
     <h4>Latest blogs</h4>
     <hr>
-    {% for posts in post%}
-    <div class="card mb-4">
-        <div class="card-body">
-            <h2 class="card-title">{{ posts.title }}</h2>
-            <p class="card-text text-muted h6">{{ posts.author }} | {{ posts.created_on}} </p>
-            <p class="card-text">{{posts.content|slice:":200" }}</p>
-            <a href="{% url 'mublog:post_detail' posts.slug  %}" class="btn btn-primary">Read More &rarr;</a>
-        </div>
-    </div>
-    {% endfor %}
+    <div>
+      {% for posts in post%}
+      <div class="card mb-4">
+          <div class="card-body">
+              <h2 class="card-title">{{ posts.title }}</h2>
+              <p class="card-text text-muted h6">{{ posts.author }} | {{ posts.created_on}} </p>
+              <p class="card-text">{{posts.content|slice:":200" }}</p>
+              <a href="{% url 'mublog:post_detail' posts.slug  %}" class="btn btn-primary">Read More &rarr;</a>
+          </div>
+      </div>
+      {% endfor %}
+    </div> -->
+   
+<script>
+  window.sr = ScrollReveal();
+  sr.reveal('.navbar', {
+    duration:2000,
+    origin:'left',
+  });
+  sr.reveal('.showcase-left', {
+    duration:2000,
+    origin:'top',
+    distance:'300px',
+  });
+  sr.reveal('.showcase-right', {
+    duration:2000,
+    origin:'right',
+    distance:'300px',
+  });
+  sr.reveal('.showcase-btn', {
+    duration:2000,
+    delay:1000,
+    origin:'bottom',
+    distance:'300px',
+  });
+  sr.reveal('#quotes div', {
+    duration:2000,
+    origin:'bottom',
+  });
+  sr.reveal('.info-left', {
+    duration:2000,
+    origin:'left',
+    distance:'300px',
+    viewFactor:0.2
+  });
+  sr.reveal('.info-right', {
+    duration:2000,
+    origin:'right',
+    distance:'300px',
+    viewFactor:0.2
+  });
+</script>
 
-<div class="card mt-4">
-  <img class="card-img-top" src="{% static 'img/shirt.jpg' %}" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title">Advertisments section</h5>
-</div>
-</div>
-  </div>
-  <div class="col-4">
-    <h4 id="social">Social Media Feeds</h4>
-    <hr>
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<script>
+  $(function() {
+    $('a[href*="#"]:not([href="#"])').click(function(){
+      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target: $('[name=' + this.hash.slice(1) + ']');
+        if (target.length) {
+          $('html, body').animate({
+            scrollTop: target.offset().top
+          }, 1000);
+          return false;
+        }
+      }
+    });
+  });
+</script>
 
-
-
-  <div class="social-feed-separated">
-        <div class="social-avatar">
-            <a href="">
-
-            </a>
-        </div>
-
-        <div class="social-feed-box">
-            <div class="pull-right social-action dropdown">
-                <button data-toggle="dropdown" class="dropdown-toggle btn-white">
-                    <i class="fa fa-angle-down"></i>
-                </button>
-                <ul class="dropdown-menu m-t-xs">
-                    <li><a href="#">Config</a></li>
-                </ul>
-            </div>
-            <div class="social-avatar">
-                <a href="#">
-                    Andrew Williams
-                </a>
-                <small class="text-muted">Today 4:21 pm - 12.06.2014</small>
-            </div>
-            <div class="social-body">
-                <p>
-                    Many desktop publishing packages and web page editors now use Lorem Ipsum as their
-                    default model text, and a search for 'lorem ipsum' will uncover many web sites still
-                    in their infancy. Packages and web page editors now use Lorem Ipsum as their
-                    default model text.
-                </p>
-
-                <div class="btn-group">
-                    <button class="btn btn-white btn-xs"><i class="fa fa-thumbs-up"></i> Like this!</button>
-                    <button class="btn btn-white btn-xs"><i class="fa fa-comments"></i> Comment</button>
-                    <button class="btn btn-white btn-xs"><i class="fa fa-share"></i> Share</button>
-                </div>
-            </div>
-            <div class="social-footer">
-            </div>
-            <div class="pull-right social-action dropdown">
-                <button data-toggle="dropdown" class="dropdown-toggle btn-white">
-                    <i class="fa fa-angle-down"></i>
-                </button>
-                <ul class="dropdown-menu m-t-xs">
-                    <li><a href="#">Config</a></li>
-                </ul>
-            </div>
-            <div class="social-avatar">
-                <a href="#">
-                    Andrew Williams
-                </a>
-                <small class="text-muted">Today 4:21 pm - 12.06.2014</small>
-            </div>
-            <div class="social-body">
-                <p>
-                    Many desktop publishing packages and web page editors now use Lorem Ipsum as their
-                    default model text, and a search for 'lorem ipsum' will uncover many web sites still
-                    in their infancy. Packages and web page editors now use Lorem Ipsum as their
-                    default model text.
-                </p>
-
-                <div class="btn-group">
-                    <button class="btn btn-white btn-xs"><i class="fa fa-thumbs-up"></i> Like this!</button>
-                    <button class="btn btn-white btn-xs"><i class="fa fa-comments"></i> Comment</button>
-                    <button class="btn btn-white btn-xs"><i class="fa fa-share"></i> Share</button>
-                </div>
-            </div>
-            <div class="social-footer">
-            </div>
-        </div>
-        <div class="icons">
-          <a href="#" class="fa fa-facebook"></a>
-          <a href="#" class="fa fa-twitter"></a>
-          <a href="#" class="fa fa-google"></a>
-          <a href="#" class="fa fa-linkedin"></a>
-        </div>
-    </div>
-  </div>
-</div>
-</div>
+<span>Photo by <a href="https://unsplash.com/@thenewmalcolm?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Obi Onyeador</a> on <a href="https://unsplash.com/s/photos/black-people?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
 
 {% endblock %}

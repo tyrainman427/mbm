@@ -8,56 +8,58 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+  <script src="https://unpkg.com/scrollreveal"></script>
   <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
-  <script src="https://use.fontawesome.com/ef83817e5e.js"></script>
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-  <title>MBM</title>
+  <title>SCU</title>
 
 </head>
 <body>
-  <div class="container">
+  <div class="container-fluid">
     <!-- navbar start -->
+  
     <!-- Image and text -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="/">MBM</a>
+    <nav class="navbar navbar-fixed-top navbar-expand-lg navbar-default navbar-right">
+      <a class="navbar-brand" href="{%% static 'img/brand.png'}">SCU</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link" href="/">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-item nav-link" href="{% url 'members:member-list'%}">Members</a>
+          <!-- <a class="nav-item nav-link" href="{% url 'members:member-list'%}">Members</a> -->
           <a class="nav-item nav-link" href="/about/">About</a>
           <a class="nav-item nav-link" href="/contact/">Contact</a>
           <a class="nav-item nav-link" href="/signup/">Become A Member</a>
-          <a class="nav-item nav-link" href="/portal/">Employee Portal</a>
-          <a class="nav-item nav-link" href="{% url 'mublog:home' %}">Blog</a>
-
+          <!-- <a class="nav-item nav-link" href="/portal/">Employee Portal</a> -->
+          <!-- <a class="nav-item nav-link" href="{% url 'mublog:home' %}">Blog</a> -->
         </div>
-      </div>
+        </div>
     </nav>
+  </div>
+  
     <!-- navbar end -->
-
+  
     {% block body %}
+    
     {% endblock %}
 
-    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+    <div class="row">
+      <div class="container-fluid">
+    <footer class="pt-4 border-top">
       <div class="row">
         <div class="col-12 col-md">
-          <img class="mb-2" src="../../assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">
-          <small class="d-block mb-3 text-muted">&copy;MBM 2020</small>
+          <img class="mb-2" src="../img/scu_icon.png" alt="" width="24" height="24">
+          <small class="d-block mb-3 text-muted">&copy;SCU 2020</small>
         </div>
         <div class="col-6 col-md">
           <h5>Features</h5>
           <ul class="list-unstyled text-small">
-            <li><a class="text-muted" href="#">Cool stuff</a></li>
-            <li><a class="text-muted" href="#">Random feature</a></li>
-            <li><a class="text-muted" href="#">Team feature</a></li>
-            <li><a class="text-muted" href="#">Stuff for developers</a></li>
+            <li><a class="text-muted" href="#">Announcements</a></li>
+            <li><a class="text-muted" href="#">News</a></li>
+            <li><a class="text-muted" href="#">Fundraising</a></li>
+            <li><a class="text-muted" href="#">Privacy</a></li>
             <li><a class="text-muted" href="#">Another one</a></li>
             <li><a class="text-muted" href="#">Last time</a></li>
           </ul>
@@ -82,13 +84,13 @@
         </div>
       </div>
     </footer>
+    </div>
   </div>
 
-</div>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
 
 </body>
 

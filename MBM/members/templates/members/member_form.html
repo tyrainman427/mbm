@@ -1,5 +1,5 @@
 {% extends 'members/base.html' %}
-
+{% load crispy_forms_tags %}
 {% block body %}
 
 <h2>MBM Create Member Page</h2>
@@ -8,7 +8,7 @@
       <!-- Security token -->
       {% csrf_token %}
       <!-- Using the formset -->
-      {{ form.as_p }}
+      {{form|crispy}}
       <input class="btn btn-primary bt-sm" type="submit" value="Submit">
       <a class="btn btn-secondary" href="{% url 'members:member-list' %}" type="button" name="button">Back</a>
   </form>
