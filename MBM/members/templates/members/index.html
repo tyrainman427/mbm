@@ -6,14 +6,18 @@
 
 <style>
 h1,h2,h3,h4,h5,h6 {
-  font-family: Poppins;
+  font-family: 'Alegreya', serif;
+
 }
 p {
   font-family: Roboto;
 }
 #showcase h1{
-  font-size: 50px;
+  font-size: 63px;
   margin-bottom: 20px;
+}
+#showcase.div.row {
+  background: url("{% static '/img/guys.jpg' %}");
 }
 .company_name {
   font-size: 65px;
@@ -49,8 +53,8 @@ p {
   background: url("{% static 'img/shirt.jpg'%}") no-repeat center center fixed;
   padding: 40px;
   color: #fff;
-  border-top: #333 7px solid;
-  border-bottom: #333 7px solid;
+  border-top: red 7px solid;
+  border-bottom: green 7px solid;
   background-size: cover;
 }
 body {
@@ -181,8 +185,8 @@ a.nav-item.nav-link {
         <div class="info-left">
           <h2>Info Block 1</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque labore quod similique deleniti est, iste recusandae laudantium libero vero molestias laboriosam consequatur cumque dolor commodi possimus nulla. Doloribus, ut. Non.</p>
-          <!-- <div>
-            {% for posts in post%}
+          <div>
+            {% for posts in post.first%}
             <div class="card mb-4">
                 <div class="card-body">
                     <h2 class="card-title">{{ posts.title }}</h2>
@@ -192,7 +196,7 @@ a.nav-item.nav-link {
                 </div>
             </div>
             {% endfor %}
-          </div> -->
+          </div>
         </div>
       </div>
       <div class="col-md-6 col-sm-6">
@@ -204,8 +208,14 @@ a.nav-item.nav-link {
     </div>
   </div>
 </section>
+<div class="container">
+  <div class="row">
+    <h1 style="text-align: center;">Become A Member Today!</h1>
+  </div>
+</div>
 
 <section id="member">
+  
   <div class="container">
       <div class="row">
           <div class="col-md-5 col-sm-5">

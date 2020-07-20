@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'members',
     'employee',
     'mublog',
+    'news',
 ]
 
 MIDDLEWARE = [
