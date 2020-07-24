@@ -20,11 +20,16 @@ a.fa {
   font-size: 50px;
   margin: 15px;
 }
+/* div#girl{
+  background: black;
+  background-size: cover;
+} */
 body {
   -webkit-background-size:cover;
   -moz-background-size:cover;
   -o-background-size:cover;
   background-size: cover;
+  overflow-x: hidden;
 }
 .card {
   position: relative;

@@ -5,9 +5,9 @@ from newsapi import NewsApiClient
  
 def Index(request):
     newsapi = NewsApiClient(api_key='722c05c77ee94c99bb4d8d5e18dedddc')
-    all_articles = newsapi.get_everything(q='blm',
+    all_articles = newsapi.get_everything(q='blacklivesmatter',
                                       language='en',
-                                      sort_by='popularity',
+                                      sort_by='relevancy',
                                       )
  
  

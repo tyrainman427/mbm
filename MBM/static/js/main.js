@@ -21,8 +21,8 @@ $(document).ready(function() {
             console.log("NEWS: ",lastestNews)
         },
 
-        })
-})
+        });
+});
     $.ajax({
         method: "GET",
         error: function() {

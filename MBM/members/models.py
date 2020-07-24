@@ -15,30 +15,42 @@ class Address(models.Model):
     
     def __str__(self):
         return f"{self.street},{self.city},{self.state}"
-
-class Member(models.Model):
-    first_name = models.CharField(max_length=250)
-    last_name = models.CharField(max_length=250)
-    date_of_birth = models.DateField()
-    phone_number = models.CharField(max_length=250, blank=True)
-    email_address = models.CharField(max_length=30)
-    date_created = models.DateField(auto_now_add=True)
-    is_admin = models.BooleanField(default=False)
-    address = models.ForeignKey(Address, on_delete=models.CASCADE, default=1)
-
-    def __str__(self):
-        return self.first_name
-
-    # def get_absolute_url(self): # new
-    #     return reverse('members:members_detail', args=[str(self.id)])
-
+    
     
 class Membership(models.Model):
+    id = models.AutoField(primary_key=True)
     is_active = models.BooleanField(default=True)
     is_donor = models.BooleanField(default=False)
     is_volunteer = models.BooleanField(default=False)
     is_vendor = models.BooleanField(default=False)
     date_joined = models.DateField(auto_now_add=True)
-    member = models.ForeignKey(Member, on_delete=models.CASCADE, default=settings.AUTH_USER_MODEL)
+
+
+class Member(models.Model):
+    first_name = models.CharField(max_length=250)
+    last_name = models.CharField(max_length=250)
+    date_of_birth = models.CharField(max_length=10)
+    phone_number = models.CharField(max_length=250, blank=True)
+    email_address = models.CharField(max_length=30)
+    date_created = models.DateField(auto_now_add=True)
+    is_admin = models.BooleanField(default=False)
+    # membership = models.OneToOneField(Membership, on_delete=models.CASCADE)
+    address = models.ManyToManyField(Address)
+
+    def __str__(self):
+        return self.first_name
+
+    def get_absolute_url(self): 
+        return reverse('members:members_detail', args=[str(self.id)])
+
+class Contact(models.Model):
+    subject = models.CharField(max_length=100)
+    name = models.CharField(max_length=20)
+    email = models.EmailField(max_length=15)
+    message = models.CharField(max_length=500)
+    from_email = models.EmailField(max_length=15)
+    
+    def __str__(self):
+        return self.name
 
 

@@ -3,7 +3,17 @@
 {% load crispy_forms_tags %}
 {% block body %}
 
-<div class="jumbotron" style="color:black;background-color: black;">
+<style>
+  body {
+  -webkit-background-size:cover;
+  -moz-background-size:cover;
+  -o-background-size:cover;
+  background-size: cover;
+  overflow-x: hidden;
+}
+</style>
+
+<div class="jumbotron" style="color:black;background-color: black;margin-top: 111px;">
  
     <h1 style="color:white;background-color: black;text-align: center;">
         Latest News Update on #BLACKLIVESMATTER
@@ -18,7 +28,11 @@
         <div class="col-sm-4">
             <div class="card-deck">
                 <div class="card">
+                  {% if i != None %}
                   <img class="card-img-top" src="{{ i }}" alt="Card image cap">
+                  {% else %}
+                  <img class="card-img-top" src="{% static 'img/logo.png'%}" alt="Card image cap">
+                  {% endif %}
                   <div class="card-body">
                     <h5 class="card-title">{{new|slice:":100"}}...</h5>
                     <p class="card-text">{{ des|slice:":100" }}...</p>
