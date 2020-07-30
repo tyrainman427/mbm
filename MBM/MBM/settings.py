@@ -159,3 +159,6 @@ SENDGRID_SANDBOX_MODE_IN_DEBUG=False
 import ssl
 
 ssl._create_default_https_context = ssl._create_unverified_context
+
+import django_heroku
+django_heroku.settings(locals())
