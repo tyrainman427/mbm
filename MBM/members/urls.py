@@ -1,6 +1,6 @@
 from django.urls import path
 from django.urls import re_path
-from .views import MemberList, MemberDetailView, index, MemberCreateView, MemberUpdateView, MemberDeleteView, signup,about,contact, employee_portal
+from .views import MemberList, MemberDetailView, index,program, MemberCreateView, MemberUpdateView, MemberDeleteView, signup,about,contact, employee_portal
 from django.contrib.auth.decorators import login_required
 
 
@@ -17,5 +17,6 @@ urlpatterns = [
     path('<int:id>/update/', MemberUpdateView, name='member-update'),
     path('members/<pk>/delete/', MemberDeleteView.as_view(), name='member-delete'),
     path('portal/', employee_portal, name='portal'),
+    path('programs/', program, name='programs')
     
 ]

@@ -7,4 +7,5 @@ urlpatterns = [
     path('',include('members.urls')),
     path('employee/',include('employee.urls')),
     path('blog/',include('mublog.urls')),
+    path('news/', include('news.urls'))
 ]

@@ -4,11 +4,14 @@ from .models import Member, Address, Membership
 from django.urls import reverse,reverse_lazy
 from django.contrib.auth.models import User
 from mublog.models import Post
-from .forms import MemberUpdateForm
+from .forms import MemberUpdateForm, ContactForm
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from datetime import datetime
 from django.contrib.auth import update_session_auth_hash
+from django.core.mail import BadHeaderError, send_mail
+from django.http import HttpResponse, HttpResponseRedirect
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
 
 
 def index(request):
@@ -30,8 +33,38 @@ def index(request):
 def about(request):
     return render(request, 'members/about.html')
 
+def program(request):
+    return render(request, 'members/programs.html')
+
 def contact(request):
-    return render(request, 'members/contact.html')
+    form = ContactForm()
+    if request.method == "POST":
+        form = ContactForm(request.POST)
+        if form.is_valid():
+            subject = f'Subject: {form.cleaned_data["subject"]}'
+            message = f'Message: {form.cleaned_data["message"]}'
+            from_email = "no-reply@silvercityuprising.org"
+            to = ['support@silvercityuprising.org',]
+            name = form.cleaned_data["name"]
+            email = f'Email: {form.cleaned_data["email"]}'
+            
+            try:
+                send_mail(subject, message, from_email, to,name,email)
+            
+                return render(request,'members/contact.html',{'name':name})
+            except BadHeaderError:
+                return HttpResponse("Invalid headers")
+        else:
+            form = ContactForm()
+            return HttpResponse("The header was invalid")
+            
+    return render(request, 'members/contact.html',{'form':form})
+
+
+            
+    
+    
+ 
 
 def signup(request):
     return render(request, 'members/member_signup.html')
@@ -75,3 +108,7 @@ class MemberDeleteView(DeleteView):
     model = Member
     success_url = '/members/'
 
+
+
+
+    

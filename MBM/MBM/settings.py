@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'members',
     'employee',
     'mublog',
+    'news',
 ]
 
 MIDDLEWARE = [
@@ -143,3 +144,18 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_BACKEND = "sendgrid_backend.SendgridBackend"
+SENDGRID_API_KEY = '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'
+EMAIL_HOST = 'smtp.sendgrid.net'
+EMAIL_HOST_USER = 'apikey' # this is exactly the value 'apikey'
+EMAIL_HOST_PASSWORD = SENDGRID_API_KEY
+EMAIL_PORT = 25,587
+EMAIL_USE_TLS = True
+
+SENDGRID_SANDBOX_MODE_IN_DEBUG=False
+
+import ssl
+
+ssl._create_default_https_context = ssl._create_unverified_context
