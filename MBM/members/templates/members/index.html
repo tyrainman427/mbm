@@ -5,31 +5,62 @@
 {% load activity_tags %}
 
 <style>
-h1,h2,h3,h4,h5,h6 {
-  font-family: 'Alegreya', serif;
-
-}
-p {
-  font-family: Roboto;
-}
-#showcase h1{
-  font-size: 63px;
-  margin-bottom: 20px;
-}
-#showcase.div.row {
-  background: url("{% static '/img/guys.jpg' %}");
-}
-.company_name {
-  font-size: 65px;
-  color: white;
+ .fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 80px;
   text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+}
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-youtube {
+  background: #bb0000;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+#quotes {
+  background: black;
+  padding: 50px 0 30px 0;
+  text-align: center;
+  margin-top: 40px;
+}
+#quotes p {
+  color: #fff;
+  font-size: 32px;
+  font-family: 'Josefin Sans';
+}
+#quotes p.author {
+  font-size: 20px;
+  color: #666;
 }
 #showcase img {
   height: 500px;
 }
 .showcase-left{
   margin-left: 200px;
-  margin-top: 81px;
+  margin-top: 100px;
 }
 .showcase-right {
   margin-right: 200px;
@@ -50,39 +81,24 @@ p {
   margin: 20px 0 60px 0;
 }
 #member {
-  background: url("{% static 'img/shirt.jpg'%}") no-repeat center center fixed;
+  /* background: url("{% static 'img/shirt.jpg'%}") no-repeat center center fixed; */
   padding: 40px;
   color: #fff;
   border-top: red 7px solid;
   border-bottom: green 7px solid;
   background-size: cover;
+  background-color: black;
 }
-body {
-  font-size: 16px;
-  -webkit-background-size:cover;
-  -moz-background-size:cover;
-  -o-background-size:cover;
-  background-size: cover;
-  overflow-x: hidden;
+h1,h2,h3,h4,h5,h6 {
+  font-family: 'Alegreya', serif;
+
 }
-a.nav-item.nav-link {
-  color: black;
-  font-size: 25px;
+p {
+  font-family: Roboto;
 }
-#quotes {
-  background: black;
-  padding: 50px 0 30px 0;
-  text-align: center;
-  margin-top: 40px;
-}
-#quotes p {
-  color: #fff;
-  font-size: 32px;
-  font-family: 'Josefin Sans';
-}
-#quotes p.author {
-  font-size: 20px;
-  color: #666;
+#showcase h1{
+  font-size: 63px;
+  margin-bottom: 20px;
 }
 </style>
  
@@ -143,9 +159,9 @@ a.nav-item.nav-link {
     <div class="row">
       <div class="col-md-6 col-sm-6">
         <div class="info-left">
-          <h2>Info Block 1</h2>
+          <h2>Person Highlight of the month</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque labore quod similique deleniti est, iste recusandae laudantium libero vero molestias laboriosam consequatur cumque dolor commodi possimus nulla. Doloribus, ut. Non.</p>
-          <!-- <div>
+          <div>
             {% for posts in post.first%}
             <div class="card mb-4">
                 <div class="card-body">
@@ -156,18 +172,19 @@ a.nav-item.nav-link {
                 </div>
             </div>
             {% endfor %}
-          </div> -->
+          </div> 
         </div>
       </div>
       <div class="col-md-6 col-sm-6">
         <div class="info-right">
-          <h2>Info Block 2</h2>
+          <h2>Business Highlight of the month</h2>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque labore quod similique deleniti est, iste recusandae laudantium libero vero molestias laboriosam consequatur cumque dolor commodi possimus nulla. Doloribus, ut. Non.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 <div class="container">
 
     <center><h1>Become A Member Today!</h1></center>
@@ -212,13 +229,26 @@ a.nav-item.nav-link {
           </form>
           </div>
           <div class="col-md-7 col-sm-7">
-
+            <p style="font-size: 27px;">You will become a part of the movement to see change in our community by using all our efforts and resources to rebuild,
+               uplift and educate our youths or adults who may need assistance.  Join now!</p>
           </div>
       </div>
   </div>
 </section>
 
-<section class="mt-4 mb-4" id="events">
+<section class="mb-2">
+  <center>
+    <h1>Follow Us!</h1>
+                <br>
+                <a href="#" class="fa fa-facebook"></a>
+                <!-- <a href="#" class="fa fa-twitter"></a> -->
+                <a href="#" class="fa fa-linkedin"></a>
+                <a href="#" class="fa fa-youtube"></a>
+                <a href="#" class="fa fa-instagram"></a>
+  </center>
+</section>
+
+<!-- <section class="mt-4 mb-4" id="events">
   <center><h1>Events</h1></center>
   <hr>
   <center><h4>No current events.  Please check back later.</h4></center>
@@ -261,7 +291,7 @@ a.nav-item.nav-link {
     <span class="sr-only">Next</span>
   </a>
 </div>
-</section>
+</section> -->
 
 <!-- BLOG SECTION -->
 <!-- <br class="mb-3">
@@ -283,7 +313,7 @@ a.nav-item.nav-link {
       {% endfor %}
     </div> -->
    
-<!-- <script>
+<script>
   window.sr = ScrollReveal();
   sr.reveal('.navbar', {
     duration:2000,
@@ -320,23 +350,6 @@ a.nav-item.nav-link {
     origin:'right',
     distance:'300px',
     viewFactor:0.2
-  });
-</script> -->
-
-<script>
-  $(function() {
-    $('a[href*="#"]:not([href="#"])').click(function(){
-      if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target: $('[name=' + this.hash.slice(1) + ']');
-        if (target.length) {
-          $('html, body').animate({
-            scrollTop: target.offset().top
-          }, 1000);
-          return false;
-        }
-      }
-    });
   });
 </script>
 

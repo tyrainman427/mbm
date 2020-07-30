@@ -36,6 +36,9 @@ def about(request):
 def program(request):
     return render(request, 'members/programs.html')
 
+def founders(request):
+    return render(request, 'members/founders.html')
+
 def contact(request):
     form = ContactForm()
     if request.method == "POST":
