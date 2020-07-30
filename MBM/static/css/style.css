@@ -1,10 +1,6 @@
-footer {
-  background-color: black;
-  text-align: center;
-  color: white;
-}
 .navbar-default {
   background:#fff;
+  font-size: 25px;
   border: 0;
   font-family: Poppins;
 }
@@ -13,24 +9,22 @@ footer {
   color:#000 !important;
   font-weight: bold;
 }
+
 #table {
   margin-bottom: 100px
 }
-a.fa {
-  font-size: 50px;
-  margin: 15px;
-}
-/* div#girl{
-  background: black;
-  background-size: cover;
-} */
 body {
   -webkit-background-size:cover;
   -moz-background-size:cover;
   -o-background-size:cover;
   background-size: cover;
   overflow-x: hidden;
+  height: 100%
 }
+html{
+  height: 100%
+}
+
 .card {
   position: relative;
   display: -webkit-box;
@@ -46,7 +40,7 @@ body {
   border: 1px solid rgba(0, 0, 0, 0.125);
   border-radius: 0.25rem;
   width: 250px;
-  height: 450px;
+  height: 50%;
   
 }
 
@@ -265,6 +259,20 @@ h5 .card-title {
   border-bottom-right-radius: calc(0.25rem - 1px);
   border-bottom-left-radius: calc(0.25rem - 1px);
 }
+
+#showcase.div.row {
+  background: url("{% static '/img/guys.jpg' %}");
+}
+.company_name {
+  font-size: 65px;
+  color: white;
+  text-align: center;
+}
+
+body {
+  font-size: 16px;
+}
+
 
 @media (min-width: 576px) {
   .card-deck {
